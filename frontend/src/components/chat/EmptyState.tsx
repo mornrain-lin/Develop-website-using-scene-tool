@@ -23,7 +23,7 @@ export function EmptyState({ onPickPersona, onExample }: Props) {
         </div>
       </FadeIn>
       <FadeIn>
-        <h1 className="text-center text-3xl font-bold tracking-tight">你好，我是灵犀</h1>
+        <h1 className="text-center text-3xl font-bold tracking-tight">你好，我是 Mornrain</h1>
       </FadeIn>
       <FadeIn delay={0.05}>
         <p className="mt-2 text-center text-muted-foreground">

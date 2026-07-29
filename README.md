@@ -1,11 +1,12 @@
-# 灵犀 · AI 助手
+# Mornrain · AI 助手
 
 > 开箱即用的多角色 AI 助手 Web 应用 —— 写作、翻译、编程、情感陪伴、简历优化、旅行规划，一个就够了。
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Stack](https://img.shields.io/badge/React_19-Express_4-Tailwind_4-181717?logo=react)](https://github.com)
+[![CI](https://github.com/mornrain-lin/Develop-website-using-scene-tool/actions/workflows/ci.yml/badge.svg)](https://github.com/mornrain-lin/Develop-website-using-scene-tool/actions/workflows/ci.yml)
 
-**灵犀** 是一款面向大众的 AI 助手，内置 6 位「专家角色」，支持流式对话、本地保存历史、明暗主题，无需登录、打开即用。后端基于 OpenAI 兼容接口对接主流大模型（OpenAI / DeepSeek 等），未配置密钥时自动进入「演示模式」，方便你先体验界面再接入自己的模型。
+**Mornrain** 是一款面向大众的 AI 助手，内置 6 位「专家角色」，支持流式对话、本地保存历史、明暗主题，无需登录、打开即用。后端基于 OpenAI 兼容接口对接主流大模型（OpenAI / DeepSeek 等），未配置密钥时自动进入「演示模式」，方便你先体验界面再接入自己的模型。
 
 ---
 
@@ -24,7 +25,7 @@
 
 | 欢迎页 | 角色对话 |
 |--------|----------|
-| ![灵犀欢迎页：多角色 AI 助手](docs/screenshots/home.png) | ![灵犀对话页：流式回复](docs/screenshots/chat.png) |
+| ![Mornrain 欢迎页：多角色 AI 助手](docs/screenshots/home.png) | ![Mornrain 对话页：流式回复](docs/screenshots/chat.png) |
 
 ---
 
@@ -44,8 +45,8 @@
 
 ```bash
 # 1. 克隆
-git clone https://github.com/your-name/lingxi-ai.git
-cd lingxi-ai
+git clone https://github.com/mornrain-lin/Develop-website-using-scene-tool.git
+cd Develop-website-using-scene-tool
 
 # 2. 启动后端
 cd backend

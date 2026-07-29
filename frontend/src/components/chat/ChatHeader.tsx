@@ -27,7 +27,7 @@ export function ChatHeader({ persona, theme, onToggleTheme, onNewChat, onOpenSid
           <Sparkles className="size-4 text-white" />
         </div>
         <div className="leading-tight">
-          <div className="text-sm font-semibold">{persona ? persona.name : '灵犀 AI'}</div>
+          <div className="text-sm font-semibold">{persona ? persona.name : 'Mornrain'}</div>
           <div className="text-xs text-muted-foreground">
             {persona ? persona.description : '你的全能 AI 助手'}
           </div>

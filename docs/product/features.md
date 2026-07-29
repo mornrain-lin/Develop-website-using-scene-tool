@@ -1,7 +1,7 @@
-# 灵犀 AI 助手 — 产品需求文档
+# Mornrain AI 助手 — 产品需求文档
 
 ## 产品概述
-灵犀是一款面向大众的 AI 助手 Web 应用。它内置多位「专家角色」，支持流式对话、对话历史本地保存、明暗主题切换，开箱即用、无需登录。后端以 OpenAI 兼容接口对接主流大模型，未配置密钥时自动进入「演示模式」，便于体验与二次开发。
+Mornrain 是一款面向大众的 AI 助手 Web 应用。它内置多位「专家角色」，支持流式对话、对话历史本地保存、明暗主题切换，开箱即用、无需登录。后端以 OpenAI 兼容接口对接主流大模型，未配置密钥时自动进入「演示模式」，便于体验与二次开发。
 
 ## 核心功能
 1. **多专家角色**：写作大师、翻译官、程序员、情感树洞、简历优化师、旅行规划师，一键切换，自动注入对应系统提示词。
@@ -31,7 +31,7 @@ Conversation { id, title, personaId, messages[], createdAt, updatedAt }
 ChatMessage  { id, role('system'|'user'|'assistant'), content, createdAt, streaming?, error? }
 Persona     { id, name, emoji, description, systemPrompt, greeting, icon, accent }
 ```
-持久化：localStorage（`lingxi.conversations.v1`、`lingxi.activeId.v1`、`lingxi.theme`）。
+持久化：localStorage（`mornrain.conversations.v1`、`mornrain.activeId.v1`、`mornrain.theme`）。
 
 ## API 端点（后端）
 - `POST /api/chat`

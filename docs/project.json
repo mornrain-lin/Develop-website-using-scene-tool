@@ -1,8 +1,8 @@
 {
   "project_type": "web",
   "sub_project_type": "",
-  "name": "灵犀 AI 助手",
-  "app_slug": "lingxi-ai",
+  "name": "Mornrain AI 助手",
+  "app_slug": "mornrain-ai",
   "version_description": "初始化多角色AI助手应用",
   "preview_type": "pc"
 }

@@ -26,7 +26,7 @@ export function Sidebar({
         <div className="flex size-8 items-center justify-center rounded-full bg-brand-gradient text-sm shadow-sm">
           <Sparkles className="size-4 text-white" />
         </div>
-        <span className="text-lg font-bold">灵犀</span>
+        <span className="text-lg font-bold">Mornrain</span>
       </div>
       <div className="px-3">
         <Button onClick={() => {

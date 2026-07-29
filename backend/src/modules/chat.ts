@@ -38,7 +38,7 @@ function buildDemoReply(messages: ChatMessage[]): string {
     `当前服务未配置大模型 API Key，因此返回的是示例内容。\n\n` +
     `要获得真实、智能的回复，只需在 backend 目录的 .env 文件中填写：` +
     `AI_API_KEY（支持 OpenAI、DeepSeek 等 OpenAI 兼容接口），保存后刷新页面即可。\n\n` +
-    `✨ 灵犀内置多位专家角色：写作大师、翻译官、程序员、情感树洞、简历优化师、旅行规划师，` +
+    `✨ Mornrain 内置多位专家角色：写作大师、翻译官、程序员、情感树洞、简历优化师、旅行规划师，` +
     `切换角色即可获得更专业的对话体验。`
   )
 }

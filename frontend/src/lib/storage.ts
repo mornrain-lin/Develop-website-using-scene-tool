@@ -1,8 +1,8 @@
 import type { Conversation } from '@/types/chat'
 
-const CONV_KEY = 'lingxi.conversations.v1'
-const ACTIVE_KEY = 'lingxi.activeId.v1'
-const THEME_KEY = 'lingxi.theme'
+const CONV_KEY = 'mornrain.conversations.v1'
+const ACTIVE_KEY = 'mornrain.activeId.v1'
+const THEME_KEY = 'mornrain.theme'
 
 function safeParse<T>(raw: string | null): T | null {
   if (!raw) return null

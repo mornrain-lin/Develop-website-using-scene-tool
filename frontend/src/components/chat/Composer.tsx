@@ -45,7 +45,7 @@ export function Composer({ onSend, onStop, isStreaming }: Props) {
           }}
           onKeyDown={onKeyDown}
           rows={1}
-          placeholder="给灵犀发消息…（Enter 发送，Shift+Enter 换行）"
+          placeholder="给 Mornrain 发消息…（Enter 发送，Shift+Enter 换行）"
           className="max-h-[200px] flex-1 resize-none border-0 bg-transparent px-2 py-2 shadow-none focus-visible:ring-0"
         />
         {isStreaming ? (
@@ -59,7 +59,7 @@ export function Composer({ onSend, onStop, isStreaming }: Props) {
         )}
       </div>
       <p className="mt-2 text-center text-xs text-muted-foreground">
-        灵犀可能会出错，重要信息请自行核实。
+        Mornrain 可能会出错，重要信息请自行核实。
       </p>
     </div>
   )

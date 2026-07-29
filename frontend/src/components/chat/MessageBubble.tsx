@@ -34,7 +34,7 @@ export function MessageBubble({ message, persona, canRegenerate, onRegenerate }:
   }
 
   const avatar = persona?.emoji ?? '✨'
-  const name = persona?.name ?? '灵犀'
+  const name = persona?.name ?? 'Mornrain'
 
   return (
     <div className="flex gap-3">
