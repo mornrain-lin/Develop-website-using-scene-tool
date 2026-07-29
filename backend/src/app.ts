@@ -1,4 +1,5 @@
 import express, { Application } from 'express'
+import path from 'path'
 import cors from 'cors'
 import compression from 'compression'
 import 'express-async-errors'
@@ -34,6 +35,17 @@ export const createApp = (): Application => {
   // API routes - System & Health
   app.use(env.API_PREFIX, systemRouter)
   app.use(env.API_PREFIX, chatRouter)
+
+  // Serve the built frontend (single-origin deployment).
+  // In production the frontend is built into ../frontend/dist and the backend
+  // hosts it, so the relative `/api` calls work without extra CORS config.
+  const staticDir = path.resolve(process.cwd(), '../frontend/dist')
+  app.use(express.static(staticDir))
+  app.get('*', (_req, res) => {
+    res.sendFile(path.join(staticDir, 'index.html'), (err) => {
+      if (err) res.status(404).send('Frontend not found. Run `pnpm build` in the frontend directory first.')
+    })
+  })
 
   // ============================================
   // Add your domain module routes here

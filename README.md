@@ -81,14 +81,72 @@ AI_MODEL=gpt-4o-mini
 
 ---
 
-## 📦 生产构建
+## 🚀 部署
 
-```bash
-cd frontend && pnpm build && pnpm preview
-cd backend  && pnpm build && pnpm start
+### 1) 配置真实模型
+
+编辑 `backend/.env`（可复制 `backend/.env.example`）：
+
+```env
+# 留空 = 演示模式（返回示例回复）
+AI_API_KEY=sk-xxxx
+
+# OpenAI 示例
+AI_BASE_URL=https://api.openai.com/v1
+AI_MODEL=gpt-4o-mini
+
+# DeepSeek 示例（二选一，把上面两行替换为）
+# AI_BASE_URL=https://api.deepseek.com/v1
+# AI_MODEL=deepseek-chat
 ```
 
-建议用 Nginx 等反向代理，将 `/api` 转发到后端服务。
+支持任何 OpenAI 兼容接口；密钥只留在后端，不会暴露给前端。
+
+### 2) 推荐：单服务部署（前后端同源）
+
+后端会托管构建后的前端，前端用相对路径 `/api` 调用，无需额外跨域配置。
+
+```bash
+# 构建前端
+cd frontend && pnpm install && pnpm build && cd ..
+# 构建并启动后端（同时托管前端）
+cd backend  && pnpm install && pnpm build && pnpm start
+```
+
+启动后访问 `http://<服务器>:3000` 即可（端口由 `PORT` 环境变量控制，默认 3000）。
+
+**以 Render 为例**（Railway / Fly.io 同理）：
+
+| 配置项 | 值 |
+|--------|----|
+| Build Command | `cd frontend && pnpm install && pnpm build && cd ../backend && pnpm install && pnpm build` |
+| Start Command | `cd backend && pnpm start` |
+| 环境变量 | `AI_API_KEY`、`AI_BASE_URL`、`AI_MODEL`、`PORT=3000`、`NODE_ENV=production` |
+
+> 提示：若把前端与后端分开部署（如前端用 Vercel/Netlify、后端用 Render），需要在前端用环境变量或代理把 `/api` 指向后端地址，并在后端用 `CORS_ORIGIN` 放行对应域名。
+
+### 3) 自托管（Nginx 反向代理）
+
+```nginx
+server {
+  listen 80;
+  server_name your-domain.com;
+
+  location /api/ {
+    proxy_pass http://127.0.0.1:3000;
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+  }
+
+  location / {
+    proxy_pass http://127.0.0.1:3000;
+  }
+}
+```
+
+把后端跑在 `3000`，Nginx 将 `/api` 与静态资源统一转发即可。
 
 ---
 

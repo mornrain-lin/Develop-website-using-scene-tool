@@ -3,6 +3,6 @@
   "sub_project_type": "",
   "name": "Mornrain AI 助手",
   "app_slug": "mornrain-ai",
-  "version_description": "Fix CI pnpm version and add build badge",
+  "version_description": "Add deployment guide with model config",
   "preview_type": "pc"
 }
