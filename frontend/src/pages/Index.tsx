@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useChat } from '@/hooks/useChat'
 import { useTheme } from '@/hooks/useTheme'
 import { PERSONA_MAP } from '@/lib/personas'
@@ -15,7 +15,7 @@ export default function Index() {
   const [menuOpen, setMenuOpen] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
 
-  const messages = chat.active?.messages ?? []
+  const messages = useMemo(() => chat.active?.messages ?? [], [chat.active?.messages])
   const hasMessages = messages.length > 0
 
   useEffect(() => {

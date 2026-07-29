@@ -1,7 +1,7 @@
 import { Router, type Request, type Response } from 'express'
 import { ChatRequestSchema, type ChatMessage } from '../types/chat.types'
 
-export const chatRouter = Router()
+export const chatRouter: Router = Router()
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -133,7 +133,8 @@ async function streamFromProvider(
 chatRouter.post('/chat', async (req: Request, res: Response) => {
   const parsed = ChatRequestSchema.safeParse(req.body)
   if (!parsed.success) {
-    return res.status(400).json({ error: 'Invalid request body', detail: parsed.error.flatten() })
+    res.status(400).json({ error: 'Invalid request body', detail: parsed.error.flatten() })
+    return
   }
 
   const { messages, model, temperature } = parsed.data

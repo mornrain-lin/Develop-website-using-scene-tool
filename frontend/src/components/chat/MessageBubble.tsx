@@ -1,4 +1,4 @@
-import { Copy, Check, RefreshCw } from 'lucide-react'
+import { Copy, RefreshCw } from 'lucide-react'
 import { toast } from 'sonner'
 import { cn } from '@/lib/utils'
 import { Markdown } from '@/lib/markdown'
